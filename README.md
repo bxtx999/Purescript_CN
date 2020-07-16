@@ -1,7 +1,3 @@
-# PureScript CN
-
----
-
 ![Purescript_logo](https://github.com/purescript/purescript/raw/master/logo.png)
 
 Purescript 文档翻译。
