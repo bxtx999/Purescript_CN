@@ -31,3 +31,14 @@ examplePerson = Person { name: "Bonnie", age: 26 }
 - `showPerson` 函数获取参数 `Person` 并返回一个 `String`。
 - `showPerson` 对参数进行个案分析，首先匹配构造函数 `Person`，然后使用字符串串联和对象访问器返回其结果。
 - `examplePerson`是一个 `Person` 对象，由 `Person` 构造函数构成，并为名称赋值 `String` "Bonnie"，为年龄赋值 `Int` 26。
+
+### 指南
+
+1. [Types](Types.md)
+1. Syntax
+1. Type Classes
+1. Pattern Matching
+1. Modules
+1. FFI
+1. Records
+1. Differences from Haskell
