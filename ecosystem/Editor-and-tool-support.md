@@ -62,4 +62,4 @@ Spacemacs 用户可以只使用 [`purescript` 层](https://github.com/syl20bnr/s
 
 - [psvm-js](https://github.com/ThomasCrvsr/psvm-js) - PureScript 版本管理器
 
-- [psc-pane](https://github.com/anttih/psc-pane) - 自动重新加载编译器，可格式化单个错误以适合窗口
+- [psc-pane](https://github.com/anttih/psc-pane) - 自动重载编译器，将单个错误格式化以适应窗口。
