@@ -8,7 +8,7 @@ Purescript 文档翻译
 
 ### Language
 
-- Type
+- [Type](language/Types.md)
 
 ### 来源
 
