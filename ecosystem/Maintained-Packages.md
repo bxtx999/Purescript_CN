@@ -1,5 +1,5 @@
 
-＃维护的PureScript软件包
+# 维护的PureScript软件包
 
 以下资源可用于查找由PureScript社区编写并主动维护的库：
 

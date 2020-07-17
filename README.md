@@ -2,14 +2,14 @@
 
 Purescript 文档翻译。
 
-Purescript 是一种精简的强类型编程语言，可以翻译成 Javascript。更多消息可以访问[PureScript官网](http://purescript.org/)
+Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript。更多消息可以访问[PureScript官网](http://purescript.org/)
 
 
 ## 目录
 
 ### 入门
 
-+ [Getting Started](https://github.com/purescript/documentation/blob/master/guides/Getting-Started.md): 下载 PureScript 并构建第一个项目
++ [Getting Started](https://github.com/fred1653/Purescript_CN/blob/master/guides/Getting-Started.md): 创建 PureScript 的第一个项目
 
 + [Try PrueScript](http://try.purescript.org/): PureScript Playground
 
@@ -27,14 +27,22 @@ Purescript 是一种精简的强类型编程语言，可以翻译成 Javascript�
 
 ### 指南
 
-- Common Operators
+- [Common Operators](https://github.com/fred1653/Purescript_CN/blob/master/guides/Common%20Operators.md)
+
 - The Foreign Function Interface (FFI)
+
 - FFI Tips
+
 - Custom Type Errors
+
 - PureScript Without Node
+
 - Contrib Library Guidelines
+
 - Error Suggestions
+
 - psc-ide FAQ
+
 - Try PureScript Help
 
 ### 工具
@@ -47,11 +55,13 @@ Purescript 是一种精简的强类型编程语言，可以翻译成 Javascript�
 
 ### 生态系统
 
-+ 维护包
++ [维护包](https://github.com/fred1653/Purescript_CN/blob/master/ecosystem/Maintained-Packages.md)
 
 + 代码风格指南
 
-+ 备用后端语言：PureScript也可以编译为其他语言！
++ [编辑工具](https://github.com/fred1653/Purescript_CN/blob/master/ecosystem/Editor-and-tool-support.md)
+
++ [备用后端语言](https://github.com/fred1653/Purescript_CN/blob/master/ecosystem/Alternate-backends.md)：PureScript也可以编译为其他语言！
 
 ## 来源
 
