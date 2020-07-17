@@ -5,12 +5,15 @@ PureScript 核心库是如何将这些指南付诸实践的好例子。
 ## 构建工具
 
 - 考虑使用一步到位的构建工具，如[Spago](https://github.com/purescript/spago)，让你的项目构建对其他用户来说尽可能简单。
+
 - 在你的 `README` 文件中清楚地记录编译、测试和文档的构建步骤。
 
 ## 文档
 
 - 尽量记录每一个导出的类型和函数。
+
 - 即使一个函数看起来是“不言自明”的，也最好包含一个小注释或例子来帮助初学者。
+
 - 简短的例子会有很大的帮助。试着将你的函数或类型的精髓提炼成几行，并将其作为Markdown代码块包含在你的文档中。
 
 以前通常会将 `psc-docs` 生成的Markdown文档包含在资源库中。然而，现在我们有了 [Pursuit](http://pursuit.purescript.org/)，就不需要这样做了。推荐的方法是在 README 中链接到 Pursuit 上的文档，避免检查 `psc-docs` 生成的 Markdown 文档。
@@ -22,14 +25,17 @@ PureScript 核心库是如何将这些指南付诸实践的好例子。
 - PureScript有几个优秀的测试库，其中一些包括。
 
   + Spec: https://github.com/owickstrom/purescript-spec
-  
+
   + Test-Unit：https://github.com/bodil/purescript-test-unit
 
 ## Examples
 
 - 至少写一个例子，这可能是你的测试套件的一部分，来记录你的库如何被用来解决一些简单的完整的用例。
+
 - 从您的 `README` 文件中清楚地链接到一个例子。
+
 - 让它明显地说明如何运行你的例子。
+
 - 如果你的例子产生了输出，考虑将输出包括在内（作为代码注释或在 `README`中）。
 
 ## 持续集成
@@ -76,24 +82,33 @@ PureScript 核心库是如何将这些指南付诸实践的好例子。
 ## 模块
 
 - PureScript 遵循 Haskell 的模块命名空间约定。一些常见的顶层命名空间有
+
   + 数据结构及其功能的数据
+
   + 控制结构的控制
+
   + NodeJS相关功能的Node
+
 - 在你的模块中加入模块导出列表。
+
 - 尽量减少模块导出。
 
 ## 语言交互接口
 
 - PureScript是一种新的语言，对高质量的FFI库有需求。
+
 - 如果你已经写了一个有FFI代码到本地API的库，可以考虑把它拆成两个库，一个裸露的FFI绑定集，还有你额外的功能。
 
 ## 运行时需求
 
 - NodeJS和web浏览器有区别。请在您的 `README` 文件中注意任何关于执行环境的假设（仅Node-only，仅浏览器等）。
+
 - 你的FFI库可能带有运行时的依赖性。清楚地记录这些，以及任何安装步骤。
 
 ## 保持库文件最新
 
 - 尽量保持你的库是最新的。
+
 - 考虑使用 [VersionEye](https://www.versioneye.com/)。VersionEye 会读取你的 `bower.json` 文件，并在你的依赖关系过期时提醒你。如果你的 Travis 已经启动并运行了 CI，那么你就可以很容易地测试，看看这些变化是否会破坏变化，并更及时地解决它们。
+
 - 如果你的库已经被废弃，请在 `README`  文件中清楚地记录这一事实。
