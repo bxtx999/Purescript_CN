@@ -4,7 +4,6 @@ Purescript 文档翻译。
 
 Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript。更多消息可以访问[PureScript官网](http://purescript.org/)
 
-
 ## 目录
 
 ### 入门

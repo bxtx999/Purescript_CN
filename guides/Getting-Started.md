@@ -80,19 +80,20 @@ PSCi 是 PureScript 的交互模式，对于处理纯计算和测试思想很有
 
 在命令行中使用 `spago repl` 打开 PSCi 模式。也可以手动创建 `.purs-repl` 文件，在 PSCi 中加载模块和依赖。如果直接调用 PSCi 可执行文件，则需要手动加载这些文件。
 
-```
-PSCi, version 0.12.0
+```bash
+PSCi, version 0.13.8
 Type :? for help
 
 import Prelude
 
-> 
+>
 ```
 
 可以通过 `:?` 查看命令列表：
 
 ```bash
-    The following commands are available:
+> :?
+The following commands are available:
 
     :?                        Show this help menu
     :quit                     Quit PSCi
@@ -103,11 +104,13 @@ import Prelude
     :kind        <type>       Show the kind of <type>
     :show        import       Show all imported modules
     :show        loaded       Show all loaded modules
+    :show        print        Show the repl's current printing function
     :paste       paste        Enter multiple lines, terminated by ^D
     :complete    <prefix>     Show completions for <prefix> as if pressing tab
+    :print       <fn>         Set the repl's printing function to <fn> (which must be fully qualified)
 
-    Further information is available on the PureScript documentation repository:
-    --> https://github.com/purescript/documentation/blob/master/guides/PSCi.md
+Further information is available on the PureScript documentation repository:
+ --> https://github.com/purescript/documentation/blob/master/guides/PSCi.md
 ```
 
 在本教程中，我们将选择这些命令。
@@ -231,6 +234,7 @@ spago repl
 > :quit
 See ya!
 ```
+
 我们也可以用 Spago 将模块编译成 JavaScript：
 
 ```bash
@@ -277,16 +281,20 @@ module Main where
 import Prelude
 
 import Euler (answer)
+import Effect (Effect)
 import Effect.Console (log)
 
+main :: Effect Unit
 main = do
   log ("The answer is " <> show answer)
+
 ```
 
 使用 `spago run` 命令编译，并运行 `Main` 模块：
 
 ```bash
 $spago run
+[info] Installation complete.
 [info] Build succeeded.
 The answer is 233168
 ```
@@ -374,7 +382,7 @@ Build succeeded.
 
 要构建CommonJS模块，请使用`spago build`命令：
 
-#### 下一步？
+#### 下一步
 
 如果您不熟悉类型化的函数式编程，那么下一站应该是[PureScript示例](https://book.purescript.org/)，它将通过解决实际问题引导您学习PureScript。
 
