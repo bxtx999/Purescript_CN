@@ -358,7 +358,7 @@ PS["Main"].main();
 
 这些要点很重要，因为它们意味着 PureScript 生成简单易懂的代码。通常，代码生成过程是一个很浅的转换。只需很少的语言理解即可预测将为特定输入生成的 JavaScript 代码。
 
-### 编译成 CommonJS 模块
+#### 编译成 CommonJS 模块
 
 Spago 还可以将 PureScript 代码生成 CommonJS 模块。这在使用 NodeJS 或仅在开发使用 CommonJS 模块将代码分解为较小组件的较大项目时很有用。
 
