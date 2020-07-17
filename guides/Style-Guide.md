@@ -21,8 +21,9 @@ PureScript 核心库是如何将这些指南付诸实践的好例子。
 
 - PureScript有几个优秀的测试库，其中一些包括。
 
-    + Spec: https://github.com/owickstrom/purescript-spec
-    + Test-Unit：https://github.com/bodil/purescript-test-unit
+  + Spec: https://github.com/owickstrom/purescript-spec
+  
+  + Test-Unit：https://github.com/bodil/purescript-test-unit
 
 ## Examples
 
