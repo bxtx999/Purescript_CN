@@ -65,10 +65,10 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 ## 状态
 
 - [x] Guide
-- [] Language
-- [] Errors
+- [ ] Language
+- [ ] Errors
 - [x] Ecosystem
-- [] Historical
+- [ ] Historical
 
 ## 来源
 
