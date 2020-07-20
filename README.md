@@ -32,15 +32,15 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 
 - FFI Tips
 
-- Custom Type Errors
+- [Custom Type Errors](https://github.com/fred1653/Purescript_CN/blob/master/guides/Custom-Type-Errors.md)
 
 - PureScript Without Node
 
-- Contrib Library Guidelines
+- [Contrib Library Guidelines](https://github.com/fred1653/Purescript_CN/blob/master/guides/Contrib-Guidelines.md)
 
 - Error Suggestions
 
-- psc-ide FAQ
+- [psc-ide FAQ](https://github.com/fred1653/Purescript_CN/blob/master/guides/psc-ide-FAQ.md)
 
 - Try PureScript Help
 
