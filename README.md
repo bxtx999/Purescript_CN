@@ -26,23 +26,23 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 
 ### 指南
 
-- [Common Operators](https://github.com/fred1653/Purescript_CN/blob/master/guides/Common%20Operators.md)
+- [Common Operators](guides/Common%20Operators.md)
 
 - The Foreign Function Interface (FFI)
 
 - FFI Tips
 
-- [Custom Type Errors](https://github.com/fred1653/Purescript_CN/blob/master/guides/Custom-Type-Errors.md)
+- [Custom Type Errors](guides/Custom-Type-Errors.md)
 
-- PureScript Without Node
+- [PureScript Without Node](guides/PureScript-Without-Node.md)
 
-- [Contrib Library Guidelines](https://github.com/fred1653/Purescript_CN/blob/master/guides/Contrib-Guidelines.md)
+- [Contrib Library Guidelines](guides/Contrib-Guidelines.md)
 
-- Error Suggestions
+- [Error Suggestions](guides/Error-Suggestions.md)
 
-- [psc-ide FAQ](https://github.com/fred1653/Purescript_CN/blob/master/guides/psc-ide-FAQ.md)
+- [psc-ide FAQ](guides/psc-ide-FAQ.md)
 
-- Try PureScript Help
+- [Try PureScript Help](https://github.com/purescript/trypurescript/blob/gh-pages/README.md)
 
 ### 工具
 
