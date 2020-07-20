@@ -62,6 +62,14 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 
 + [备用后端语言](ecosystem/Alternate-backends.md)：PureScript也可以编译为其他语言！
 
+## 状态
+
+- [x] Guide
+- [] Language
+- [] Errors
+- [x] Ecosystem
+- [] Historical
+
 ## 来源
 
 1. [GitHub - purescript/documentation: Documentation for the PureScript language, compiler, and tools.](https://github.com/purescript/documentation)
