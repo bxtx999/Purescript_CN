@@ -107,6 +107,10 @@ foreign import calculateInterest :: Number -> Number
 
 #### 多参数的函数
 
+PureScript 函数默认柯理化处理，所以对于多参数的 JavaScript 函数需要特殊处理。
+
+假设我们修改 `calculateInterest` 函数处理第二个参数：
+
 ```javascript
 "use strict";
 
@@ -114,6 +118,8 @@ exports.calculateInterest = function(amount, months) {
   return amount * Math.exp(0.1, months);
 };
 ```
+
+现在，一个正确的 `foreign import` 声明应该能够在运行时使用 foreign 类型正确处理多个参数的函数。`purescript-functions` 软件包提供了从 0 到 10 的函数类型集合。
 
 ```purescript
 module Interest where
@@ -123,10 +129,14 @@ import Data.Function.Uncurried (Fn2)
 foreign import calculateInterest :: Fn2 Number Number Number
 ```
 
+这里的 `Fn2` 类型构造函数用来包装两个参数的 Javascript 函数。我们可以在 PureScript 中写一个允许局部应用的柯理化包装函数。
+
 ```purescript
 calculateInterestCurried :: Number -> Number -> Number
 calculateInterestCurried = runFn2 calculateInterest
 ```
+
+另一种方法是在原生模块中使用柯理化函数。按照函数类型构造函数（`->`）的运行时表示方式决定，使用多个嵌套函数，每个函数有一个参数。
 
 ```javascript
 "use strict";
@@ -138,11 +148,17 @@ exports.calculateInterest = function(amount) {
 };
 ```
 
+这次我们就可以直接分配柯理化的函数类型。
+
 ```purescript
 foreign import calculateInterest :: Number -> Number -> Number
 ```
 
 #### 处理约束类型
+
+从 Javascript 中调用 PureScript 函数时应该注意的另一种特殊情况是：具有约束类型的值（即包含类型类约束的类型）包含额外的参数，这些参数用于向函数传递类型类字典。
+
+例如，让我们写一个简单的带有约束类型的 PureScript 函数，然后看看生成的 Javascript。
 
 ```purescript
 module Test where
@@ -154,6 +170,8 @@ inOrder :: forall a. Ord a => a -> a -> Tuple a a
 inOrder a1 a2 | a1 < a2 = Tuple a1 a2
 inOrder a1 a2 = Tuple a2 a1
 ```
+
+生成的 JavaScript 代码如下面的代码所示：
 
 ```javascript
 var inOrder = function (__dict_Ord_32) {
@@ -168,9 +186,48 @@ var inOrder = function (__dict_Ord_32) {
 };
 ```
 
+注意，`inOrder` 是一个由三个参数组成的(柯理化)函数，而不是两个参数。第一个参数是 `Ord` 约束的类型类字典。
+
+我们可以从 Javascript 中调用这个函数，通过传递一个来自 Prelude 的显式类型类字典作为第一个参数。
+
 ```javascript
 var test = Test.inOrder(Prelude.ordNumber())(20)(10);
 ```
 
 #### 处理副作用
 
+注意，上面定义的 `calculateInterest` 函数是*纯粹*的：它们没有副作用，并且每次调用都会对相同的输入产生相同的结果。
+
+PureScript 函数类型 `a->b` 不允许有副作用，所以将函数类型分配给有副作用的 Javascript 计算是不正确的。在这种情况下，正确的方法是使用在  `purescript-effect` 包中定义的 `Effect` 类型构造函数为计算分配一个类型。
+
+`Effect` 类型构造函数及其用法在 [Pursuit](https://pursuit.purescript.org/packages/purescript-effect) 上有相关的文档。
+
+#### 利用 `Data.Foreig` 对 Foreign 数据消毒
+
+从 Javascript 函数返回的数据一般不能相信是 defined 和 non-null 的。Prelude 常用库中的 PureScript 函数一般都假定值既不会是未定义的，也不会是空的，所以在使用 FFI 处理 Javascript 函数返回的值时，对数据进行消毒很重要。
+
+`Data.Foreign` 模块（在 `purescript-foreign` 包中）定义了一个 `Foreign` 数据类型，以及几个用于将 `Foreign` 值转化为常规 PureScript 值的辅助函数，并支持使用 `Maybe` 类型构造函数处理 `null` 和 `undefined`。
+
+#### 定义 Foreign 数据类型
+
+在包装 Javascript APIs 时，创建特定种类的新类型供 FFI 使用往往很有用。
+
+例如，假设我们有一个 Javascript 库 `frob`，它定义了 `Frob` 数据结构和相关函数。为了给这些函数赋予有意义的类型，可能需要在种类 `Type` 处定义一个 `Frob`类型。我们可以这样做：
+
+```purescript
+foreign import data Frob :: Type
+```
+
+`Frob` 类型现在可以在其他类型中使用，也可以在 `foreign import` 中声明：
+
+```purescript
+foreign import makeFrob :: String -> Frob
+```
+
+定义外部数据类型的开发人员应注意记录数据在运行时的预期表示形式。
+
+#### 结语
+
+这篇文章希望告诉你只要了解了一些小的实现细节，与 Javascript 的双向互操作都很简单。你现在应该能够将你的 Javascript 库包在 PureScript 中使用，反之亦然。
+
+[PureScript 书](https://book.purescript.org/chapter10.html)中包含了更多关于 FFI 的信息，以及大量的例子和练习，供感兴趣的读者参考。

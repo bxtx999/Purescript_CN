@@ -32,7 +32,7 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 
 - [The Foreign Function Interface (FFI)](guides/FFI.md)
 
-- FFI Tips
+- [FFI Tips](guides/FFI-Tips.md)
 
 - [Custom Type Errors](guides/Custom-Type-Errors.md)
 
@@ -68,7 +68,7 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 - [ ] Language
 - [ ] Errors
 - [x] Ecosystem
-- [ ] Historical
+- [x] Historical
 
 ## 来源
 

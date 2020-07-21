@@ -1,0 +1,1 @@
+Partial 类型类的指南点击 https://pursuit.purescript.org/packages/purescript-partial/2.0.1 查看
