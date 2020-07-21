@@ -30,7 +30,7 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 
 - [Style Guide](guides/Style-Guide.md)
 
-- The Foreign Function Interface (FFI)
+- [The Foreign Function Interface (FFI)](guides/FFI.md)
 
 - FFI Tips
 
