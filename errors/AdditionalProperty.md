@@ -1,6 +1,6 @@
-# `AdditionalProperty` Error
+# `AdditionalProperty` 错误
 
-## Example
+## 例子
 
 ```purescript
 module ShortFailingExample where
@@ -8,14 +8,14 @@ module ShortFailingExample where
 ...
 ```
 
-## Cause
+## 原因
 
 Explain why a user might see this error.
 
-## Fix
+## F修复
 
 - Suggest possible solutions.
 
-## Notes
+## 备注
 
 - Additional notes.
