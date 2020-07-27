@@ -330,19 +330,66 @@ oneToSix = oneToThree <> fourToSix
 
 ### 结合律（Associativity）
 
+`infixl` 的意思是重复的应用是从左边开始用括号括起来的。例如，Prelude 中的 `#` 是左关联的，这意味类似下面这样的表达式：
+
+```purescript
+products # filter isInStock # groupBy productCategory # length
+```
+
+括号内是：
+
+```purescript
+((products # filter isInStock) # groupBy productCategory) # length
+```
+
+同样，`infixr` 的意思是 "右关联"，重复的应用从右开始用括号表示。例如，来自 Prelude 的 `$` 是右联，所以表达式为：
+
+```purescript
+length $ groupBy productCategory $ filter isInStock $ products
+```
+
+括号内是：
+
+```purescript
+length $ (groupBy productCategory $ (filter isInStock $ products))
+```
+
+`infix`的意思是 "非关联性",不允许重复使用非关联性操作符。例如，来自 Prelude 的 `==` 是非关联性的，这意味着：
+
+```purescript
+true == true == true
+```
+
+导致一个[NonAssociativeError](https://github.com/purescript/documentation/blob/master/errors/NonAssociativeError.md)
+
+```bash
+Cannot parse an expression that uses multiple instances of the non-associative operator Data.Eq.(==).
+Use parentheses to resolve this ambiguity.
+```
+
+通过 `infix` 进行非关联性解析最适合运算符 `f`，其中 ``x `f` (y `f` z)`` 不一定与 ``(x `f` y)`` 相同，即不满足关联性代数性质的运算符。
+
 ### 优先级（Precedence）
+
+优先级决定了括起来的运算符的顺序。优先级较高的操作符将在前面用括号括起来。例如，在 Prelude 中取 `*` 和 `+`。`*` 优先于 `7`，而 `+` 优先于 `6`。因此，如果我们写：
 
 ```purescript
 2 * 3 + 4
 ```
 
+然后将其括起来如下：
+
 ```purescript
 (2 * 3) + 4
 ```
 
+不同关联性的操作符只要不具有相同的优先级，就可以同时出现。这个限制之所以存在，是因为编译器无法合理地选择如何给这些表达式加括号。例如，Prelude 中的运算符 `==` 和 `<$>` 分别具有固定性 `infix4` 和 `infixl 4`，这意味着给定表达式为
+
 ```purescript
 f <$> x == f <$> y
 ```
+
+编译器不知道是否将其括起来
 
 ```purescript
 (f <$> x) == (f <$> y
@@ -353,6 +400,8 @@ f <$> x == f <$> y
 ```purescript
 f <$> (x == f) <$> y
 ```
+
+因此，我们得到了一个 [MixedAssociativityError](https://github.com/purescript/documentation/blob/master/errors/MixedAssociativityError)
 
 ```bash
 Cannot parse an expression that uses operators of the same precedence but mixed associativity:
@@ -365,13 +414,15 @@ Use parentheses to resolve this ambiguity.
 
 ### 作为值的运算符( Operators as Values )
 
-
+运算符可以用括号括起来作为普通值：
 
 ```purescript
 and = (&&)
 ```
 
 ### 操作符部分
+
+通过用括号将运算符括起来并使用 `_` 作为操作数之一，可以部分应用运算符：
 
 ```purescript
 half = (_ / 2)
@@ -380,16 +431,22 @@ double = (2 * _)
 
 ### 函数作为运算符（Functions as Operators）
 
+当函数被反引号包围时，它们可以用作中缀运算符：
+
 ```purescript
 foo x y = x * y + y
 test = 10 `foo` 20
 ```
+
+运算符部分也适用于以这种方式使用:
 
 ```purescript
 fooBy2 = (_ `foo` 2)
 ```
 
 ## Case 表达式
+
+关键字 `case` 和 `of` 用于解构值，以创建基于值的构造函数的逻辑。你可以通过在 header 和 cases 中用 `,` 来限定多个值的匹配。
 
 ```purescript
 f :: Maybe Boolean -> Either Boolean Boolean -> String
@@ -401,6 +458,8 @@ f a b = case a, b of
 f (Just true) (Right true)
 ```
 
+像顶级声明一样，`case` 表达式支持防护。
+
 ```purescript
 f :: Either Int Unit -> String
 f x = case x of
@@ -410,12 +469,16 @@ f x = case x of
   Right _ -> "Right"
 ```
 
+可以通过使用一个下划线代替表达式来避免绑定；在这种情况下，下划线代表一个*匿名参数*。
+
 ```purescript
 case _ of
   0 -> "None"
   1 -> "One"
   _ -> "Some"
 ```
+
+等价于
 
 ```purescript
 \x -> case x of
@@ -426,11 +489,15 @@ case _ of
 
 ## If-Then-Else 表达式
 
+关键字 `if`、`then` 和 `else` 可用于创建类似于 JavaScript 三元表达式的条件表达式。注意，表达式始终需要 `else` 块。
+
 ```purescript
 conditional = if 2 > 1 then "ok" else "oops"
 ```
 
 ## Let 和 Where 绑定
+
+`let` 关键字引入了局部声明的集合，这些声明可以相互递归，并且可以包括类型声明：
 
 ```purescript
 factorial :: Int -> Int
@@ -443,6 +510,8 @@ factorial =
     go 1
 ```
 
+`where` 关键字还可用于在值声明的末尾引入局部声明：
+
 ```purescript
 factorial :: Int -> Int
 factorial = go 1
@@ -453,6 +522,10 @@ factorial = go 1
 ```
 
 ## 绑定快的缩进
+
+绑定体的缩进是很重要的，如果定义了多个绑定，比如在 let-in 块中，每个绑定必须有相同的缩进程度。如果定义多个绑定，如在一个 let-in 块中，每个绑定都必须有相同程度的缩进。那么，绑定的定义主体必须进一步缩进。
+
+举个例子：
 
 ```purescript
 f =
@@ -482,7 +555,11 @@ f =
     log "test"
 ```
 
-## Do 符号
+## Do
+
+关键字 `do` 为单项表达式引入了简单的语法糖。
+
+下面是一个例子，使用单项式来表示 `Maybe` 类型。
 
 ```purescript
 maybeSum :: Maybe Number -> Maybe Number -> Maybe Number
@@ -493,6 +570,16 @@ maybeSum a b = do
   pure result
 ```
 
+`maybeSum` 接收两个类型为 `Maybe Number` 的值，如果两个值都不是 `Nothing`，则返回它们的和。
+
+语句可以有以下形式：
+
+- `a <- x` 是 `bind x \a -> ...` 的语法糖。
+- `x` 是 `bind x \_ -> ...` 的语法糖。如果这是最后一个语句，则只需 `x`。
+- 一个 let 绑定 `let a = x`。注意，缺少 `in` 关键字。
+
+例子 `maybeSum` 去糖化为::
+
 ```purescript
 maybeSum a b =
   bind a \n ->
@@ -500,3 +587,5 @@ maybeSum a b =
       let result = n + m
       in pure result
 ```
+
+在实际使用中，您通常会使用 [Prelude 中的 `bind`](https://pursuit.purescript.org/packages/purescript-prelude/docs/Control.Bind#v:bind)，但是去糖化将在作用域内使用 `bind`。当使用 Prelude 的 `bind` 时，必须有一个 `Monad` 类型类的实例作为返回类型。
