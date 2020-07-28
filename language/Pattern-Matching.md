@@ -123,9 +123,9 @@ f _ = []
 
 在第一种模式中，任何正好有两个元素的数组都将被匹配并绑定到变量 `a` 中。
 
-## 守卫（Guards）
+## Guards
 
-守卫用于在模式内使用布尔值表达式施加额外的约束，并在模式后用管道引入。
+Guards 用于在模式内使用布尔值表达式施加额外的约束，并在模式后用管道引入。
 
 ```purescript
 evens :: List Int -> Int
@@ -134,14 +134,14 @@ evens (Cons x xs) | x `mod` 2 == 0 = 1 + evens xs
 evens (Cons _ xs) = evens xs
 ```
 
-当使用模式在顶层定义一个函数时，在所有模式之后都会出现护卫。
+当使用模式在顶层定义一个函数时，在所有模式之后都会出现 Guards。
 
 ```purescript
 greater x y | x > y = true
 greater _ _ = false
 ```
 
-要想被认为是穷尽性的，守卫必须清楚地包含一个始终为真的情况。尽管下面的代码很有意义，但编译器不能确定它是详尽的。
+要想被认为是穷尽性的，Guards 必须清楚地包含一个始终为真的情况。尽管下面的代码很有意义，但编译器不能确定它是详尽的。
 
 ```purescript
 compare :: Int -> Int -> Ordering
@@ -164,11 +164,11 @@ compare x y | x < y = LT
 compare _ _ = EQ
 ```
 
-(`otherwise` 是守卫中常用的`true`的同义词。)
+(`otherwise` 是 Guards 中常用的`true`的同义词。)
 
-## 模式守卫（Pattern Guards）
+## Pattern Guards
 
-模式守卫用一个左箭头表示模式匹配守卫的扩展。只有当箭头右边的计算与左边的模式匹配时，模式守卫才会成功。
+Pattern Guards 用一个左箭头表示模式匹配 Guards 的扩展。只有当箭头右边的计算与左边的模式匹配时，Pattern Guards 才会成功。
 
 例如，我们可以将函数 `fn` 应用于一个参数 `x`，只有当 `fn` 对某个 `y` 返回 `Just y` 时才会成功，同时绑定 `y`。
 
@@ -176,9 +176,9 @@ compare _ _ = EQ
 bar x | Just y <- fn x = ... -- x and y are both in scope here
 ```
 
-当使用代数数据类型时，模式守卫对于表达某些类型的控制流非常有用。
+当使用代数数据类型时，Pattern Guards 对于表达某些类型的控制流非常有用。
 
-您也可以使用逗号在守卫中添加多个表达式。
+您也可以使用逗号在 Guards 中添加多个表达式。
 
 ```purescript
 positiveLessThanFive :: Maybe Int -> Boolean
