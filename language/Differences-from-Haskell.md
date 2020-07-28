@@ -215,7 +215,7 @@ PureScript 编译器不支持类 GHC 的语言扩展。但是，有一些“内�
 - RebindableSyntax
 - ScopedTypeVariables
 
-注意 `DataKinds`：不同于 Haskell，用户定义的类型是开放的，它们没有提权，这表示它们的构造函数只能在类型中使用，而不能在值中使用。浏览有关 [kind 系统](language/Types.md#kind-system)的更多信息。
+注意 `DataKinds`：不同于 Haskell，用户定义的类型是开放的，它们没有提权，这表示它们的构造函数只能在类型中使用，而不能在值中使用。浏览有关 [kind 系统](Types.md#kind-system)的更多信息。
 
 ## `error` 和 `undefined`
 
