@@ -1,6 +1,6 @@
-# `ArgListLengthsDiffer` Error
+# `ArgListLengthsDiffer` 错误
 
-## Example
+## 例子
 
 Differing number of arguments for each foo declaration:
 
@@ -23,18 +23,18 @@ bar (Three x y z) = x * y * z
 bar NoneHere = 0
 ```
 
-## Cause
+## 原因
 
 ArgListLengthsDiffer arrises from a function having different numbers of argument variables.
 
 Commonly seen when parenthesis are forgotten around an ADT deconstruction argument.
 
-## Fix
+## 修复
 
 Ensure that there are the same number of arguments for each pattern matching function declaration.
 
 Check to ensure that there are parenthesis around ADT deconstruction.
 
-## Notes
+## 备注
 
 - Additional notes.
