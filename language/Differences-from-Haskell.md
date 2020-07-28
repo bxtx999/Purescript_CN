@@ -1,3 +1,5 @@
+# PureScript 与 Haskell 的区别
+
 ## 评估策略
 
 与 Haskell 不同，PureScript 采用严格的评估策略。
