@@ -210,9 +210,9 @@ PureScript 函数类型 `a->b` 不允许有副作用，所以将函数类型分�
 
 #### 定义 Foreign 数据类型
 
-在包装 Javascript APIs 时，创建特定种类的新类型供 FFI 使用往往很有用。
+在包装 Javascript APIs 时，创建特定 kind 的新类型供 FFI 使用往往很有用。
 
-例如，假设我们有一个 Javascript 库 `frob`，它定义了 `Frob` 数据结构和相关函数。为了给这些函数赋予有意义的类型，可能需要在种类 `Type` 处定义一个 `Frob`类型。我们可以这样做：
+例如，假设我们有一个 Javascript 库 `frob`，它定义了 `Frob` 数据结构和相关函数。为了给这些函数赋予有意义的类型，可能需要在 kind `Type` 处定义一个 `Frob`类型。我们可以这样做：
 
 ```purescript
 foreign import data Frob :: Type

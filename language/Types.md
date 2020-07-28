@@ -224,7 +224,7 @@ Row 类型表示具有重复项的无序的命名类型集合。 重复标签的
 
 Row 不是一种类型(Type)：Row 对于某种 kind `k` 具有 kind `Row k`，因此行不能作为值存在。 相反，Row 可以在类型签名(type signatures)中用于定义记录类型或其他类型，在这些类型中，标签的无序类型是有用的。
 
-要表示一个closed row 可以用逗号分隔字段，每个标签与其类型之间用双冒号分隔。
+要表示一个 closed row 可以用逗号分隔字段，每个标签与其类型之间用双冒号分隔。
 
 ```purescript
 ( name :: String, age :: Numer)
@@ -238,7 +238,7 @@ Row 不是一种类型(Type)：Row 对于某种 kind `k` 具有 kind `Row k`，�
 
 ## 类型同义 Type Synonyms
 
-为了方便起见，可以使用 `type` 关键字声明类型的同义词。Type Synonyms 可以包含类型参数，但[不能partially applied](https://github.com/purescript/documentation/blob/master/errors/PartiallyAppliedSynonym.md#partiallyappliedsynonym-error)。Type Synonyms 可以与任何其他类型一起构建，但是[不能循环引用](https://github.com/purescript/documentation/blob/master/errors/CycleInTypeSynonym.md#cycleintypesynonym-error)。
+为了方便起见，可以使用 `type` 关键字声明类型的同义词。Type Synonyms 可以包含类型参数，但[不能 partially applied](https://github.com/purescript/documentation/blob/master/errors/PartiallyAppliedSynonym.md#partiallyappliedsynonym-error)。Type Synonyms 可以与任何其他类型一起构建，但是[不能循环引用](https://github.com/purescript/documentation/blob/master/errors/CycleInTypeSynonym.md#cycleintypesynonym-error)。
 
 例如：
 
@@ -306,7 +306,7 @@ equal1 = one :: forall a. Semiring a => Eq a => a
 
 ## Kind System
 
-Kind 类型是其他类型。约束(constraint)是唯一不支持kind的类型，没有 kind-level 的等价类型。多态 Kind 通过 `data`、`type`、`newtype` 和 `class` 声明的顶 top-level kind 签名实现的。
+Kind 类型是其他类型。约束(constraint)是唯一不支持 kind 的类型，没有 kind-level 的等价类型。多态 Kind 通过 `data`、`type`、`newtype` 和 `class` 声明的顶 top-level kind 签名实现的。
 
 ```purescript
 -- Defined in Type.Proxy
@@ -318,7 +318,7 @@ proxy2 = Proxy :: Proxy "foo" -- k is Symbol
 proxy3 = Proxy :: Proxy (foo :: Int, bar :: String) -- k is Row Type
 ```
 
-与其他类型变量一样，kind 变量在类型签名中也要使用`forall`进行量化。 多态 kind 必须在引用它们的任何种类带注释变量之前进行量化：
+与其他类型变量一样，kind 变量在类型签名中也要使用 `forall` 进行量化。 多态 kind 必须在引用它们的任何种类带注释变量之前进行量化：
 
 ```purescript
 proxy :: forall k (a :: k). Proxy a

@@ -218,13 +218,13 @@ function (a) {
 
 ### 属性访问器
 
-就像在JavaScript中一样，访问 Record 的一个属性，使用点加属性名。
+就像在 JavaScript 中一样，访问 Record 的一个属性，使用点加属性名。
 
 ```purescript
 rec.propertyName
 ```
 
-还有一些部分应用的访问器，在属性名后面加下划线。
+还有一些 partially applied 的访问器，在属性名后面加下划线。
 
 ```purescript
 _.propertyName
@@ -269,7 +269,7 @@ r = { val: -1
 r' = r { level1 { val = 1 } }
 ```
 
-通配符还可以在更新中使用来生成部分应用的更新
+通配符还可以在更新中使用来生成 partially applied 的更新
 
 ```purescript
 rec { foo = _ }
