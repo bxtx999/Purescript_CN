@@ -12,7 +12,7 @@ module ShortFailingExample where
 
 Explain why a user might see this error.
 
-## F修复
+## 修复
 
 - Suggest possible solutions.
 
