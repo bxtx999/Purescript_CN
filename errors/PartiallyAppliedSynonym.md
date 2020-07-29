@@ -69,7 +69,7 @@ um = UserNT'Maybe { firstName: Just "test" }
 
 And to fix the second example, we can't simply fully apply `X`, as that would produce a kind error, `Could not match kind Type -> Type with kind Type`. The `f` in `IdentityF f a` needs to be kind `Type -> Type`, but here it is kind `Type`. The most appropriate solution is to simply use `A` or `B` as the type synonym, as demonstrated in `alsoOk` and `alsoAlsoOk`.
 
-## Notes
+## 备注
 
 Eta-expanding makes it impossible to use the synonym in some situations in which it would otherwise work, and unlike some other restrictions we impose on ourselves using the type system, this one is never useful - it only prevents you doing things you might want to do, not things you might want to avoid.
 

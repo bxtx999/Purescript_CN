@@ -20,9 +20,9 @@ In the example above, the type of `runST` causes us to check `newSTRef 0` agains
 
 - If you are using the `ST` effect, you might be leaking a reference to a mutable variable. Carefully inspect the types of any values which might leak outside the call to `runST`, and make sure this is not the case.
 
-## Notes
+## 备注
 
-### `$` and `runST`
+### `$` 和 `runST`
 
 One common pitfall is to use the `runST` or `runPure` functions with the `$` operator. This will often lead to the `EscapedSkolem` error due to instantiation of type variables. Avoid this by using parentheses instead of `$`.
 
