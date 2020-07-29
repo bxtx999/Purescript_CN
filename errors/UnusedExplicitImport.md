@@ -1,6 +1,6 @@
-# `UnusedExplicitImport` Warning
+# `UnusedExplicitImport` 警告
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -10,14 +10,14 @@ import Data.Maybe (maybe, Maybe(..))
 test = Just -- maybe is not used
 ```
 
-## Cause
+## 原因
 
 A module is imported with an explicit imports list but not all of the identifiers are used.
 
-## Fix
+## 修复
 
 Remove the unnecessary identifiers as suggested.
 
-## Notes
+## 备注
 
 [This error is auto-fixable](../guides/Error-Suggestions.md).

@@ -1,6 +1,6 @@
 # `ArgListLengthsDiffer` 错误
 
-## 例子
+## 举例
 
 Differing number of arguments for each foo declaration:
 

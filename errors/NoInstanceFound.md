@@ -1,6 +1,6 @@
-# `NoInstanceFound` Error
+# `NoInstanceFound` 错误
 
-## Example
+## 举例
 
 ```
 > data Foo = Foo
@@ -13,13 +13,13 @@ No type class instance found for Data.Show.Show Foo
 No type class instance was found for Data.Functor.Functor Fooy
 ```
 
-## Causes and Fixes
+## 原因并修复
 
 This error occurs when the type-checker can't find an instance of a type class for a data type where it expects or requires one.
 
 Some situations in which this can occur:
 
-### Can't find instance
+### 没有实例
 
 This error is caused when a function has a type signature having a type class constraint on a type, but the type-checker can't find an instance of the type class for that type.
 
@@ -39,7 +39,7 @@ This can be fixed by adding an instance for the relevant type. To fix the earlie
 "Foo"
 ```
 
-### Ambiguous types
+### 模糊类型 Ambiguous types
  
 This error can arise in situations where the compiler is not able to solve a constraint due to ambiguous types. This is demonstrated in the following example in which no concrete type appears in the function's definition; it only uses type class methods. The compiler must be given a concrete type, or be able to infer it, to choose a type class instance.
 
@@ -53,7 +53,7 @@ To fix this, consider adding a type signature:
 better = show (mempty :: String)
 ```
 
-### Partial type class & non-exhaustive patterns
+### 部分类型类和非穷尽模式 Partial type class & non-exhaustive patterns
 
 This error can occur if your code fails to propagate `Partial` constraints properly. For an introduction to the `Partial` type class, please see the [purescript-partial library](https://pursuit.purescript.org/packages/purescript-partial).
 

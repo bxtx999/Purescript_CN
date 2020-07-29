@@ -1,6 +1,6 @@
-# `IncorrectAnonymousArgument` Error
+# `IncorrectAnonymousArgument` 错误
 
-## Example
+## 举例
 
 ```purescript
 module Example where
@@ -10,12 +10,12 @@ add = (_ + _)
 mapArray = map _ [1, 2, 3]
 ```
 
-## Cause
+## 原因
 
 In an [operator section](https://github.com/purescript/documentation/blob/fc4a9db4b128aa3331e5f990cb1860e59077af31/language/Syntax.md#operator-sections), like `(_ + 1)`, an anonymous argument can be used only once.
 
 
-## Fix
+## 修复
 
 In the case of multiple arguments, give them names:
 ```purescript
@@ -27,7 +27,7 @@ mapArray = _ `map` [1, 2, 3]
 ```
 
 
-## Notes
+## 备注
 
 - While `_ + _` will give this error; `\a -> a + _` will not
 

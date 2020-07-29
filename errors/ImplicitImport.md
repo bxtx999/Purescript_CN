@@ -1,6 +1,6 @@
-# `ImplicitImport` Warning
+# `ImplicitImport` 警告
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -12,11 +12,11 @@ import Data.Maybe
 z = Just (-1)
 ```
 
-## Cause
+## 原因
 
 A module is imported implicitly (without an explicit import list), and there is another implicit import present (which may or may not be `hiding`).
 
-## Fix
+## 修复
 
 Make all but at most one import explicit. In the above example we could make either `Data.Maybe` or `Prelude` explicit, e.g.
 
@@ -24,6 +24,6 @@ Make all but at most one import explicit. In the above example we could make eit
 import Prelude (negate)
 ```
 
-## Notes
+## 备注
 
 [This error is auto-fixable](../guides/Error-Suggestions.md).

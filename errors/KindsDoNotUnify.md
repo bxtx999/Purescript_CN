@@ -1,6 +1,6 @@
-# `KindsDoNotUnify` Error
+# `KindsDoNotUnify` 错误
 
-## Example
+## 举例
 
 ```purescript
 > import Type.Proxy
@@ -21,17 +21,17 @@ at line 1, column 5 - line 1, column 24
 while checking the kind of Proxy Array
 ```
 
-## Cause
+## 原因
 
 This error occurs when the compiler requires two _kinds_ to be equal, but they are not equal.
 
 In the example above, the type constructor `Proxy` takes an argument of kind `Type`, but `Array` has kind `Type -> Type`, hence the error message.
 
-## Fix
+## 修复
 
 - Look at the information in the error message to find the type with the offending kind.
 
-## Notes
+## 备注
 
 ### Order of Error Message
 

@@ -1,17 +1,17 @@
-# `UnsupportedTypeInKind` Error
+# `UnsupportedTypeInKind` 错误
 
-## Example
+## 举例
 
 ```purescript
 foreign import data Bad :: SomeConstraint => Type
 ```
 
-## Cause
+## 原因
 
 Not all types are valid in a kind signature. Particularly constraint arrows
 (`=>`) are disallowed since they only make sense for term-level constraint
 dependencies.
 
-## Fix
+## 修复
 
 - Only use types that are valid in kinds.

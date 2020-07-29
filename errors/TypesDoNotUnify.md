@@ -1,6 +1,6 @@
-# `TypesDoNotUnify` Error
+# `TypesDoNotUnify` 错误
 
-## Example
+## 举例
 
 ```purescript
 > 1 == "test"
@@ -22,22 +22,22 @@ while checking that expression "test"
   has type Int
 ```
 
-## Cause
+## 原因
 
 This error occurs when two types are required to be equal, but the type checker is unable to verify that they are equal.
 
 In the example above, the types `String` and `Int` can never be made equal, hence the error.
 
-## Fix
+## 修复
 
 - Look carefully at the error, especially the information at the end. Usually, it will help to narrow down the offending expression. For example, in the error message above, we are told that the error occurred "while checking that expression `"test"` has type `Int`".
 
-## Notes
-### Arrays
+## 备注
+### 数组
 
 Unlike in JavaScript, all elements of a PureScript array must be the same type. Otherwise the types will fail unification when being matched by [type inference](https://en.wikipedia.org/wiki/Unification_(computer_science)#Application:_Type_inference). For example, ```[true, false]``` or ```[1, 2, 3]``` work fine but ```[1, false]``` does not.
 
-### Another Example
+### 其他例子
 
 ```purescript
 f :: Int -> Int

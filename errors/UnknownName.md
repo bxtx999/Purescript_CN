@@ -1,6 +1,6 @@
-# `UnknownName` Error
+# `UnknownName` 错误
 
-## Example
+## 举例
 
 ```
 > import Prelude
@@ -22,15 +22,15 @@ in module $PSCI
   Unknown module Math
 ```
 
-## Cause
+## 原因
 
 This error if a name is used but that name is not in scope. Names can refer to various things - values, types, modules, operators, type classes, etc.
 
-## Fix
+## 修复
 
 - Verify the spelling of any names used.
 - Verify that the name has been imported.
 - If you are using qualified imports, make sure the module name is correct.
 - If an import results in an "Unknown module" error, make sure that any required dependencies have been installed.
 
-## Notes
+## 备注

@@ -1,6 +1,6 @@
-# `QuantificationCheckFailureInKind` Error
+# `QuantificationCheckFailureInKind` 错误
 
-## Cause
+## 原因
 
 This error occurs when implicitly generalizing the kind of a `forall`
 quantified type variable would result in an ill-scoped generalization. The
@@ -9,6 +9,6 @@ compiler always orders implicitly generalized kind variables first within a
 type variable in an inferred kind such that generalizing that kind would
 place it out of the scope of its dependency.
 
-## Fix
+## 修复
 
 - Generalize and order the kind explicitly

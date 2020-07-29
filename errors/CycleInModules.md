@@ -1,6 +1,6 @@
-# `CycleInModules` Error
+# `CycleInModules` 错误
 
-## Example
+## 举例
 
 ```purescript
 module Foo where
@@ -14,7 +14,7 @@ module Bar where
 import Foo
 ```
 
-## Cause
+## 原因
 
 This problem occurs when two modules depend on each other.
 
@@ -31,9 +31,9 @@ See https://github.com/purescript/purescript/wiki/Error-Code-CycleInModules for 
 or to contribute content related to this error.
 ```
 
-## Fix
+## 修复
 
 - Break modules into smaller parts, in order to break the cycle of dependencies.
 - Alternatively, it might be possible to combine the two modules into a single module.
 
-## Notes
+## 备注

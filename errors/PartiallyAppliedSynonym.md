@@ -1,6 +1,6 @@
-# `PartiallyAppliedSynonym` Error
+# `PartiallyAppliedSynonym` 错误
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -37,7 +37,7 @@ error :: IdentityF (X Int) Unit
 error = IdentityF (Const 5)
 ```
 
-## Cause
+## 原因
 
 A type synonym has been partially applied. To properly use a type synonym having type parameters, like `type B a` or `type TypeIdentity a`, you must apply it to a type parameter at every location in the program, like `B Int` or `TypeIdentity Int`.
 
@@ -51,7 +51,7 @@ u' :: UserT' TypeIdentity
 u' = { firstName: "test" }
 ```
 
-## Fix
+## 修复
 
 Reconsider whether you want to use a type synonym for that particular type declaration, or whether to a data type is more appropriate.
 

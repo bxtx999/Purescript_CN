@@ -1,6 +1,6 @@
-# `UnusedDctorImport` Warning
+# `UnusedDctorImport` 警告
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -11,12 +11,12 @@ test :: forall a. Maybe a -> Int
 test _ = 42
 ```
 
-## Cause
+## 原因
 
 A module is imported with an explicit imports list including a type with data construtors (`Maybe(..)` in this example)
 but only the type constructor and not its data constructors are used.
 
-## Fix
+## 修复
 
 Import only the type without data constructors. In the above example:
 
@@ -24,6 +24,6 @@ Import only the type without data constructors. In the above example:
 import Data.Maybe (Maybe)
 ```
 
-## Notes
+## 备注
 
 [This error is auto-fixable](../guides/Error-Suggestions.md).

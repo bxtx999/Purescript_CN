@@ -1,6 +1,6 @@
-# `InvalidInstanceHead` Error
+# `InvalidInstanceHead` 错误
 
-## Example
+## 举例
 
 As of 0.11.6, the `InvalidInstanceHead` error has been added to the
 purescript compiler. The error can be produced using the following:
@@ -14,14 +14,14 @@ instance FailingExample :: ClassWithInvalidInstanceHead ()
 ...
 ```
 
-## Cause
+## 原因
 
 Normally, when you see this error, it's because you're trying to write an
 `instance` of a given `class` that pattern matches on some **row type**. The
 issue here is that there isn't really a sensible way to match on row. There
 are, however, ways to get around this limitation.
 
-## Fix
+## 修复
 
 With the arrival of [`purescript-typelevel-prelude`](https://github.com/purescript/purescript-typelevel-prelude)
 2.3.0 came the introduction of `RowToList` and its related classes. The
@@ -41,7 +41,7 @@ that complements it. The keys of the `RowList` are alphabetically ordered, which
 allows us to manipulate row types in a deterministic way. If your instance heads
 pattern match on `RowList` instead of `# Type`, this error goes away.
 
-## Worked Example
+## 可用实例
 
 Let's imagine a class that we use to assert that a record is homogenous. Or, in
 simpler terms, all the fields in the record have the same type.

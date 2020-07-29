@@ -1,6 +1,6 @@
-# `ShadowedName` Warning
+# `ShadowedName` 警告
 
-## Example
+## 举例
 
 ```
 > x = let x = 1 in x
@@ -14,14 +14,14 @@ Warning 1 of 1:
   in value declaration x
 ```
 
-## Cause
+## 原因
 
 This warning occurs when a name is brought into scope, but that name is already defined in the current scope. In the example above, `x` is used to refer to both the inner and outer `let` binding.
 
 PureScript warns in this case because multiple uses of the same name might make it easy to refer to the wrong value.
 
-## Fix
+## 修复
 
 - Consider renaming one or other occurrence of the name.
 
-## Notes
+## 备注

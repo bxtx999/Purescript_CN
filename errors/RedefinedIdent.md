@@ -1,6 +1,6 @@
-# `RedefinedIdent` Error
+# `RedefinedIdent` 错误
 
-## Example
+## 举例
 
 ```purescript
 module Example where
@@ -11,11 +11,11 @@ a = 5
 
 ```
 
-## Cause
+## 原因
 
 You have defined a value with the same name multiple times.
 
-## Fix
+## 修复
 
 - Rename one of the variables. In this example:
     ```purescript
@@ -24,7 +24,7 @@ You have defined a value with the same name multiple times.
     a' = 5
     ```
 
-## Notes
+## 备注
 
 - This error also occurs if you have multiple clauses for a function, where you misspelled the function name once. For Example:
     ```purescript

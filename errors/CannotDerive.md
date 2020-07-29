@@ -1,6 +1,6 @@
-# `CannotDerive` Error
+# `CannotDerive` 错误
 
-## Example
+## 举例
 
 ```purescript
 data Bool = True | False
@@ -8,14 +8,14 @@ data Bool = True | False
 derive instance showBool :: Show Bool
 ```
 
-## Cause
+## 原因
 
 This error shows up when you're attempting to derive an instance for a class
 for which compiler support does not exist. There is a [fixed list of classes
 which can be derived by the compiler][derivable]; for any class not on this
 list, however, you'll need to find another way of obtaining an instance.
 
-## Fix
+## 修复
 
 - You will need to write an instance yourself.
 - For many classes (including `Show`), you can use [Generics][] to obtain the

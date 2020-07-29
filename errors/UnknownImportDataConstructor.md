@@ -1,6 +1,6 @@
-# `UnknownImportDataConstructor` Error
+# `UnknownImportDataConstructor` 错误
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -8,14 +8,14 @@ module ShortFailingExample where
 ...
 ```
 
-## Cause
+## 原因
 
 Explain why a user might see this error.
 
-## Fix
+## 修复
 
 - Suggest possible solutions.
 
-## Notes
+## 备注
 
 - Additional notes.

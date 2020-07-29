@@ -1,13 +1,13 @@
-# `MissingFFIModule` Error
+# `MissingFFIModule` 错误
 
-## Cause
+## 原因
 
 This error occurs if a module uses any foreign imports, but a foreign module could not be found.
 
 Usually, this means that you declared a foreign import in the PureScript module but didn't create a corresponding FFI module yet.
 
-## Fix
+## 修复
 
 - Check that the foreign module with the matching name exists. The PureScript compiler finds FFI modules by taking the source file path, and replacing the `.purs` extension with `.js`.
 
-## Notes
+## 备注

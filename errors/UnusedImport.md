@@ -1,6 +1,6 @@
-# `UnusedImport` Warning
+# `UnusedImport` 警告
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -10,15 +10,15 @@ import Some.Module
 -- Nothing from Some.Module is ever used
 ```
 
-## Cause
+## 原因
 
 There is a statement `import Some.Module` which is not required, as nothing from `Some.Module` is used (with the same qualifier if any).
 
-## Fix
+## 修复
 
 Remove the import statement.
 
-## Notes
+## 备注
 
 Often occurs during development when the code using the import has not yet been written, in which case can be ignored. 
 

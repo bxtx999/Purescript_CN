@@ -1,6 +1,6 @@
-# `ImportHidingModule` Error
+# `ImportHidingModule` 错误
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -8,12 +8,12 @@ module ShortFailingExample where
 import B hiding (module A)
 ```
 
-## Cause
+## 原因
 
 An `import` statement has a `hiding` list containing a `module` reference. Hiding imports cannot be used to hide modules.
 
-## Fix
+## 修复
 
 Remove the `hiding` item.
 
-## Notes
+## 备注

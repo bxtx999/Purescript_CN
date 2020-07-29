@@ -1,6 +1,6 @@
-# `ModuleNotFound` Error
+# `ModuleNotFound` 错误
 
-## Example
+## 举例
 
 ```purescript
 module Example where
@@ -11,11 +11,11 @@ import Contorl.Monad.Eff.Console (log)
 main = log "Hello, world!"
 ```
 
-## Cause
+## 原因
 
 You might see this error because you have attempted to import a module which the compiler was unable to find, or because you mistyped the name of a module.
 
-## Fix
+## 修复
 
 Check that:
 

@@ -1,6 +1,6 @@
-# `InvalidNewtype` Error
+# `InvalidNewtype` 错误
 
-## Example
+## 举例
 
 ```purescript
 newtype NotIdentity a = a
@@ -8,13 +8,13 @@ newtype NotIdentity a = a
 newtype NotTuple a b = NotTuple a b
 ```
 
-## Cause
+## 原因
 
 Newtypes must define a single constructor with a single argument, so the two
 most common sources of this error are having multiple arguments (like a `Tuple`)
 or forgetting to provide a constructor.
 
-## Fix
+## 修复
 
 - If you need multiple arguments, consider using a newtype around a record or `Tuple`:
 

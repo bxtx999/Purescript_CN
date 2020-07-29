@@ -1,6 +1,6 @@
-# `OverlappingPattern` Error
+# `OverlappingPattern` 错误
 
-## Example
+## 举例
 
 ```purescript
 not :: Boolean -> Boolean
@@ -9,14 +9,14 @@ not _     = true
 not false = true
 ```
 
-## Cause
+## 原因
 
 This error occurs when a pattern matching definition has **redundant** patterns, i.e., overlapping clauses.
 
 In the example, notice that the third case is redundant (that is, unreachable), as it is covered by the second case (which covers all remaining cases).
 
-## Fix
+## 修复
 
 - Remove any redundant cases from the declaration.
 
-## Notes
+## 备注

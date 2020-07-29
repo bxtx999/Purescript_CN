@@ -1,6 +1,6 @@
-# `MissingTypeDeclaration` Warning
+# `MissingTypeDeclaration` 警告
 
-## Example
+## 举例
 
 ```purescript
 module Main where
@@ -9,11 +9,11 @@ import Effect.Console (log)
 main = log "No type annotation has been provided."
 ```
 
-## Cause
+## 原因
 
 This warning is issued when a top-level declaration does not have a type annotation. The vast majority of types in PureScript code are inferrable, so it's relatively rare that the absence of a type annotation has much of an effect on compilation, but it is considered good practice to add annotations to top-level declarations anyway (as a form of documentation).
 
-## Fix
+## 修复
 
 Add a type annotation:
 
@@ -26,7 +26,7 @@ main :: Effect Unit
 main = log "A type annotation has been provided!"
 ```
 
-## Notes
+## 备注
 
 Many of [the PureScript text editor plugins](/ecosystem/Editor-and-tool-support.md) can save you the effort of writing type annotations by filling in the types for you.
 

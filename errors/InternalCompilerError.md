@@ -1,10 +1,10 @@
-# `InternalCompilerError` Error
+# `InternalCompilerError` 错误
 
-## Cause
+## 原因
 
 An internal compiler invariant was violated, aborting compilation. This is a
 defect in the compiler.
 
-## Fix
+## 修复
 
 - Report the error to [the PureScript compiler repo](https://github.com/purescript/purescript).

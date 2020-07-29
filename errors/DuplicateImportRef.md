@@ -1,6 +1,6 @@
-# `DuplicateImportRef` Warning
+# `DuplicateImportRef` 警告
 
-## Example
+## 举例
 
 ```purescript
 module ShortFailingExample where
@@ -10,12 +10,12 @@ import Prelude (unit, unit)
 test = unit
 ```
 
-## Cause
+## 原因
 
 An explicit import list contains multiple references to the same thing, i.e. has duplicates.
 
-## Fix
+## 修复
 
 Remove the extraneous items.
 
-## Notes
+## 备注

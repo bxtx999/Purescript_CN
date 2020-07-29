@@ -1,6 +1,6 @@
-# `QuantificationCheckFailureInType` Error
+# `QuantificationCheckFailureInType` 错误
 
-## Example
+## 举例
 
 ```purescript
 data Proxy :: forall k. k -> Type
@@ -9,7 +9,7 @@ data Proxy a = Proxy
 type SomeProxy = forall a. Proxy a
 ```
 
-## Cause
+## 原因
 
 This error occurs when the compiler tries to implicitly generalize a kind but
 there are multiple ways in which it could be quantified. This most often
@@ -38,6 +38,6 @@ type SomeProxy k = forall (a :: k). Proxy a
 The only places the compiler considers unambiguous are within top-level type
 and kind signatures.
 
-## Fix
+## 修复
 
 - Explicitly quantify the kind in the way most appropriate for your use case.

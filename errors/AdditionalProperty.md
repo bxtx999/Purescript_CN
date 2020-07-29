@@ -1,6 +1,6 @@
 # `AdditionalProperty` 错误
 
-## 例子
+## 举例
 
 ```purescript
 module ShortFailingExample where

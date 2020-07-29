@@ -1,6 +1,6 @@
-# `ScopeConflict` Error
+# `ScopeConflict` 错误
 
-## Example
+## 举例
 
 ```purescript
 module ScopeConflict where
@@ -12,11 +12,11 @@ id :: Number
 id = 1
 ```
 
-## Cause
+## 原因
 
 The `ScopeConflict` error occurs when an attempt is made to define a value or other name when the same name is already in scope.
 
-## Fix
+## 修复
 
 - Hide the problematic imports with a `hiding` list:
 
@@ -40,7 +40,7 @@ The `ScopeConflict` error occurs when an attempt is made to define a value or ot
     id = 1
     ```
 
-## Notes
+## 备注
 
 A common case this arises at the moment is if PureScript 0.11.x libraries are used with the 0.10.x compiler. The resulting error is:
 

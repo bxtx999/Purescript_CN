@@ -1,6 +1,6 @@
-# `DeprecatedFFIPrime` Warning
+# `DeprecatedFFIPrime` 警告
 
-## Example
+## 举例
 
 ```javascript
 exports["example'"] = 0;
@@ -12,11 +12,11 @@ module ShortFailingExample where
 foreign import example' :: Int
 ```
 
-## Cause
+## 原因
 
 An identifier imported from a foreign module contains a prime (`'`) character.
 
-## Fix
+## 修复
 
 Remove the prime from the identifier:
 

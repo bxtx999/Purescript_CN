@@ -1,9 +1,9 @@
-# `VisibleQuantificationCheckFailureInType` Error
+# `VisibleQuantificationCheckFailureInType` 错误
 
-## Cause
+## 原因
 
 Kinds are annotated in such a way that they require a visible dependent quantifier.
 
-## Fix
+## 修复
 
 - Visible dependent quantification is not supported.

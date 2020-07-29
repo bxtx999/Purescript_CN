@@ -1,6 +1,6 @@
-# `OverlappingArgNames` Error
+# `OverlappingArgNames` 错误
 
-## Example
+## 举例
 
 ```purescript
 > f x x = x
@@ -11,12 +11,12 @@ at line 1, column 5 - line 1, column 13
   Overlapping names in function/binder in declaration f
 ```
 
-## Cause
+## 原因
 
 This error occurs when you attempt to bind the same variable to different function arguments.
 
-## Fix
+## 修复
 
 - Rename one of the duplicate function arguments.
 
-## Notes
+## 备注
