@@ -65,7 +65,7 @@ Purescript 是一种小巧的强类型编程语言，可以翻译成 Javascript�
 ### Jordans Reference
 
 - [00-入门](reference/00-入门)
-- 01-FP 基础
+- [01-FP 基础](reference/01-FP哲学)
 - 02-构建工具
 - 11-语法
 - 21-Hello World
