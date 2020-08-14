@@ -20,7 +20,7 @@
 
 ### 阶段3：通过 Spago 改进 psc-package 开发者工作流程
 
-![Build-Tool-Relationships--With-Spago](Build-Tool-Relationships--With-Spago.svg)
+![Build-Tool-Relationships--With-Spago](assets/Build-Tool-Relationships--With-Spago.svg)
 
 ### 阶段4：Spago 成为主流，而 psc-package 则很少使用
 
