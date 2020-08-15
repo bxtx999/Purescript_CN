@@ -47,4 +47,4 @@
 | gulp-purescript | Gulp-based Build Tool | No longer used? Last updated 1 year ago... | https://github.com/purescript-contrib/gulp-purescript |
 | Purify | -- | Deprecated in light of psc-package | -- |
 
-对于这个 repo，我们将使用 `spago` 作为构建工具和依赖项管理器。
+对于这个 repo，我们将使用 `spago` 作为编译工具和依赖管理器。
