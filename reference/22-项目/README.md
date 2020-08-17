@@ -76,16 +76,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 1. 安装 NPM 依赖
 
-```bash
-# Benchmark.js - https://benchmarkjs.com/
-npm install benchmark
-```
+    ```bash
+    # Benchmark.js - https://benchmarkjs.com/
+    npm install benchmark
+    ```
 
 1. 使用 `spago` 编译代码
 
-```bash
-spago build
-```
+    ```bash
+    spago build
+    ```
 
 ### 编译、运行每个项目
 
