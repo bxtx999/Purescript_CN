@@ -5,6 +5,6 @@
 - 项目应该被**维护**。每个库都应该有一个明确的维护者，负责响应拉取请求和问题。维护者只需要打开一个问题，我们就会找到一个新的维护者或者取消这个库。
 - 项目应该是**最新的**。具体来说，它们应该是根据当前的核心库集构建的(在合理的时间窗口内)，或者是被确定为废弃的或正在寻找新的维护者。
 项目应该被记录下来。通常情况下，这只是涉及到运行psc-docs作为构建过程的一部分，但是Contrib库也应该努力用一些文本和示例的组合来记录每一个导出的类型和函数。
-- 代码库应该尽量遵循[风格指南](https://github.com/fred1653/Purescript_CN/blob/master/guides/Style-Guide.md)。
+- 代码库应该尽量遵循[风格指南](https://github.com/bxtx999/Purescript_CN/blob/master/guides/Style-Guide.md)。
 
 不遵循这些指南的维护者将被要求将他们的仓库从 `purescript-contrib` 中移出。
