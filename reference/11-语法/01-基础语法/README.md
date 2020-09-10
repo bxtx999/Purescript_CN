@@ -9,7 +9,7 @@ spago build
 运行下面的命令查看文档：
 
 ```bash
-spago docs
+spago docs --open
 ```
 
-然后打开文件 `./generated-docs/index.html`，打开相关模块查看输出。
+上面的命令将会生成文档，然后打开文件 `./generated-docs/index.html`，打开相关模块查看输出。

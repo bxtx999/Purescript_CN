@@ -33,3 +33,7 @@ thunk = lazilyCompute 5
 -- somewhere else in our code, when we finally need it
 result = forceThunk thunk
 ```
+
+## 其他资源
+
+-无需阅读该资源即可理解和使用 PureScript。 但是，它可能满足那些好奇的人。 它在示例中使用 Lisp 语言，因此代码可能很难理解。 无论如何，《计算机程序的结构和解释（SICP）》一书（请参阅[A](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) 或[B](https://sarabander.github.io/sicp/)有[关于 lazy evaluation 和 thunk 的章节](https://sarabander.github.io/sicp/html/4_002e2.xhtml)。

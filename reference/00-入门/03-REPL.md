@@ -174,8 +174,8 @@ Type -> Type
 
 其中有两个命令:
 
-- `show loaded` 或 `:s loaded` 显示可以导入REPL的所有模块。
-- `show import` 或 `:s imported` 显示当前已在REPL中导入的模块。
+- `show loaded`/`:s loaded` 显示 REPL 会话所知道的所有模块。有些模块可能已经导入，也可能尚未导入。(在 REPL 会话开始之前，PureScript 编译器会根据给它的源 globs 编译所有 PureScript 文件。这些 globs 中的所有模块都是 REPL 会话所知道的， 但您可能不希望在给定的会话中使用所有模块。)
+- `show import`/`:s import` 显示您当前REPL会话中已导入的模块
 
 ### Print
 
